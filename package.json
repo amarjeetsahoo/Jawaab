@@ -26,7 +26,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest --config jest.config.ts",
+    "test:ci": "jest --config jest.config.ts --ci --coverage"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -57,13 +59,21 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@jest/globals": "^30.5.2",
     "@tailwindcss/postcss": "^4.0.9",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.3",
+    "@types/jest": "^30.0.0",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^22.13.5",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
+    "jest": "^30.5.2",
+    "jest-environment-jsdom": "^30.5.2",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.0.9",
+    "ts-jest": "^29.4.12",
+    "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
   }
 }

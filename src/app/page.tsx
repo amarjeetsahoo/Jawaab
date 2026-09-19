@@ -1,13 +1,28 @@
 "use client";
 
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import { IntakeScreen } from "@/components/IntakeScreen";
 import { AnalyzingWait } from "@/components/AnalyzingWait";
-import { FindingsScreen } from "@/components/FindingsScreen";
-import { ActionSuite } from "@/components/ActionSuite";
-import { RefusalModal } from "@/components/RefusalModal";
-import { TelemetryDrawer } from "@/components/TelemetryDrawer";
 import { AnalysisResult } from "@/types";
+
+// Heavy components are code-split — only fetched when the user reaches that view
+const FindingsScreen = dynamic(
+  () => import("@/components/FindingsScreen").then((m) => m.FindingsScreen),
+  { ssr: false, loading: () => null }
+);
+const ActionSuite = dynamic(
+  () => import("@/components/ActionSuite").then((m) => m.ActionSuite),
+  { ssr: false, loading: () => null }
+);
+const RefusalModal = dynamic(
+  () => import("@/components/RefusalModal").then((m) => m.RefusalModal),
+  { ssr: false, loading: () => null }
+);
+const TelemetryDrawer = dynamic(
+  () => import("@/components/TelemetryDrawer").then((m) => m.TelemetryDrawer),
+  { ssr: false, loading: () => null }
+);
 
 type ViewState = "intake" | "analyzing" | "findings" | "act" | "refusal";
 
