@@ -1,0 +1,110 @@
+{
+  "case_id": "case_1_loan",
+  "document_hash": "a8f5c48b291d94892c90df0357e62a5cf38b6b063d917f6920f3e820cb058e19",
+  "domain": "loan",
+  "notice_metadata": {
+    "sender": "Adv. Arvind S. Mathur (on behalf of M/s Apex Finvest Capital Ltd.)",
+    "recipient": "Mr. Rajesh Kumar Verma",
+    "notice_date": "2026-09-12",
+    "mode_of_service": "Speed Post / Email",
+    "alleged_amount": 482400,
+    "claimed_deadline_days": 7
+  },
+  "deadline_analysis": {
+    "effective_receipt_date": "2026-09-15",
+    "statutory_response_deadline": "2026-09-30",
+    "statutory_response_days_allowed": 15,
+    "notice_claimed_deadline": "2026-09-19",
+    "urgency_level": "amber",
+    "limitation_expiry_date": "2029-09-02",
+    "limitation_months_remaining": 35,
+    "deadline_explanation": "Under Section 138(c) of the Negotiable Instruments Act, 1881, the recipient has a statutory period of 15 days from notice receipt to respond or pay. The advocate's 7-day demand has no force in criminal law."
+  },
+  "claims": [
+    {
+      "id": "claim_1_recall",
+      "claim_type": "loan_recall_acceleration",
+      "verdict": "unsupported",
+      "notice_quote": "You have persistently defaulted in payment of installments for the months of July 2026 and August 2026. Consequently, My Client has recalled the entire loan facility.",
+      "agreement_quote": "An Event of Default with respect to non-payment shall be deemed to occur only when the Borrower fails to pay three (3) consecutive monthly installments and fails to cure such non-payment within thirty (30) days of formal written cure notice.",
+      "agreement_clause": "Sanction Agreement, Clause 9.1",
+      "statute_pack_id": "SARFAESI-CIVIL-001",
+      "statute_citation": "Indian Contract Act, 1872 & Clause 9.1 of Loan Agreement",
+      "analysis": "The lender has accelerated the loan after only two unpaid EMIs (July and August 2026). Your signed sanction letter strictly requires three consecutive missed installments plus a 30-day cure notice before acceleration is permitted.",
+      "remedy": "Rebut the recall demand by citing Clause 9.1, tender payment for the 2 overdue installments, and demand withdrawal of loan acceleration."
+    },
+    {
+      "id": "claim_2_penal_interest",
+      "claim_type": "penal_interest_exorbitant",
+      "verdict": "overstated",
+      "notice_quote": "penal interest calculated at 36% per annum compounded monthly from default date",
+      "agreement_quote": "the Borrower shall be liable to pay penal charges at the rate of 18% per annum on the overdue EMI amount for the actual duration of delay. In accordance with RBI Fair Lending Practice norms, penal charges shall not be capitalized or added to the principal balance.",
+      "agreement_clause": "Sanction Agreement, Clause 4.2",
+      "statute_pack_id": "LOAN-USURIOUS-INTEREST-002",
+      "statute_citation": "RBI Guidelines on Fair Lending Practices (2023) & Clause 4.2",
+      "analysis": "The notice claims 36% p.a. compounded monthly. Your contract explicitly caps penal charges at 18% p.a. simple interest on overdue EMIs only. Compounding penal interest directly violates RBI's 2023 Fair Practices Directions.",
+      "remedy": "Demand a revised statement recomputing penal interest at 18% simple interest strictly on overdue installments without capitalization."
+    },
+    {
+      "id": "claim_3_arrest_threat",
+      "claim_type": "threat_of_arrest_debt",
+      "verdict": "unenforceable",
+      "notice_quote": "which will result in non-bailable warrants and immediate criminal arrest by the police authorities.",
+      "agreement_quote": "All disputes, differences, claims, or recovery proceedings arising out of or under this Agreement shall be subject to civil remedies under the Arbitration and Conciliation Act, 1996 or through competent Civil Courts having jurisdiction in New Delhi.",
+      "agreement_clause": "Sanction Agreement, Clause 14.1",
+      "statute_pack_id": "SARFAESI-CIVIL-001",
+      "statute_citation": "Section 51 CPC & Jolly George Varghese v. Bank of Cochin (SC 1980)",
+      "analysis": "A lender or advocate cannot direct the police to arrest someone for defaulting on a civil loan. Imprisonment for pure inability to pay civil debt is unconstitutional under Article 21 and Section 51 CPC. The advocate is using unlawful intimidation.",
+      "remedy": "Notify the lender that intimidation of criminal arrest for civil debt violates the Supreme Court ruling in Jolly George Varghese and RBI Recovery Guidelines."
+    },
+    {
+      "id": "claim_4_repealed_law",
+      "claim_type": "citation_of_repealed_law",
+      "verdict": "overstated",
+      "notice_quote": "Section 420 of the Indian Penal Code, 1860 for cheating and criminal breach of trust",
+      "agreement_quote": null,
+      "agreement_clause": null,
+      "statute_pack_id": "REPEALED-IPC-420-006",
+      "statute_citation": "Bharatiya Nyaya Sanhita, 2023 (Section 318)",
+      "analysis": "The Indian Penal Code, 1860 was formally repealed on 1 July 2024. Any notice alleging criminal conduct occurring in 2026 must be invoked under Bharatiya Nyaya Sanhita (BNS) Section 318, not IPC Section 420. The notice relies on repealed statutes.",
+      "remedy": "Point out the citation of repealed penal law in your formal response."
+    },
+    {
+      "id": "claim_5_cheque_dishonour",
+      "claim_type": "cheque_dishonour_window",
+      "verdict": "valid",
+      "notice_quote": "Cheque No. 492011 dated 28th August 2026 drawn on HDFC Bank for an amount of Rs. 50,000/-, which upon presentation was dishonoured by your banker with the remark 'FUNDS INSUFFICIENT'",
+      "agreement_quote": null,
+      "agreement_clause": null,
+      "statute_pack_id": "NI-ACT-138-NOTICE-003",
+      "statute_citation": "Section 138 Negotiable Instruments Act, 1881",
+      "analysis": "The cheque of Rs. 50,000/- was genuinely returned unpaid. The lender has a valid statutory right under Section 138 of the NI Act, BUT you have 15 days from notice receipt to pay the cheque amount before any court complaint can be filed.",
+      "remedy": "Prioritize paying the cheque amount of Rs. 50,000/- within 15 days (by 30 Sept 2026) to completely extinguish any criminal liability under Section 138."
+    }
+  ],
+  "do_nothing_forecast": {
+    "reply_sent": "The lender is put on notice that their recall and 36% interest violate contract terms. Criminal arrest threats are neutralized. Section 138 liability is avoided by offering the Rs. 50,000 cheque clearance within the statutory 15 days.",
+    "stay_silent": "The advocate may file a Section 138 criminal complaint after Day 15 in magistrate court, leading to summons. The lender may assign recovery agents who will continue harassment based on unchallenged claims."
+  },
+  "lawyer_handoff_pack": {
+    "key_issues_framed": [
+      "Premature loan recall under Clause 9.1 (only 2 defaults vs. mandatory 3 defaults + 30 days cure notice).",
+      "Penal interest calculation at 36% compounded p.a. violating Clause 4.2 (18% simple interest cap) and RBI 2023 Directions.",
+      "Unlawful threat of police arrest for civil debt recovery contravening Section 51 CPC.",
+      "Valid Section 138 NI Act exposure limited to Rs. 50,000 cheque, curable within 15 days of notice receipt."
+    ],
+    "questions_for_advocate": [
+      "Can we file a consumer complaint or RBI Ombudsman grievance for coercive threats of arrest?",
+      "Should we deposit the Rs. 50,000 cheque amount via RTGS immediately with a covering letter specifying it is towards the dishonoured cheque?",
+      "Can we obtain an injunction against recovery agents visiting the residence?"
+    ],
+    "free_legal_aid_eligibility": "If household annual income is under ₹3,00,000 (or ₹5,00,000 for women/SC/ST in Delhi/UP), you are entitled to free legal counsel under the Legal Services Authorities Act via NALSA / DLSA."
+  },
+  "translations": {
+    "hi": {
+      "summary_headline": "यह नोटिस आंशिक रूप से अतिरंजित और अवैध धमकियों पर आधारित है।",
+      "plain_summary": "Apex Finvest ने आपके 2 ईएमआई डिफॉल्ट के आधार पर पूरा 4.82 लाख रुपये का लोन वापस मांग लिया है और पुलिस द्वारा गिरफ्तारी की धमकी दी है। कानूनन, सिविल लोन न चुकाने पर कोई पुलिस गिरफ्तारी नहीं हो सकती। साथ ही, आपका एग्रीमेंट 3 डिफॉल्ट के बाद ही लोन रिकॉल की अनुमति देता है। चेक बाउंस (₹50,000) के लिए आपके पास नोटिस मिलने के बाद 15 दिन का कानूनी समय है।",
+      "hero_deadline_text": "जवाब देने के लिए 15 दिन शेष हैं (30 सितम्बर 2026 तक)"
+    }
+  }
+}

@@ -1,0 +1,121 @@
+# Jawaab Verified Statute Pack v1.0
+# Every rule has been verified against bare acts & authoritative Supreme Court judgments.
+# Format designed for direct injection into Gemini prompt context + TypeScript lookup.
+
+- id: SARFAESI-CIVIL-001
+  domain: loan
+  claim_type: threat_of_arrest_debt
+  verdict: unenforceable
+  statute: "Code of Civil Procedure, 1908 & SARFAESI Act, 2002"
+  section: "Section 51 CPC / RBI Fair Practices Code for Lenders"
+  authority: "Jolly George Varghese v. Bank of Cochin (1980) 2 SCC 360"
+  verified_by: "AMJ"
+  verified_on: "2026-09-19"
+  response_window_days: null
+  plain_language: >
+    Non-payment of a civil loan or debt cannot lead to arrest or criminal imprisonment 
+    under Indian law, unless the lender proves in court that you have the means to pay 
+    and are deliberately evading or committing willful fraud.
+  remedy_action: "Advise lender in writing that non-payment is a civil dispute and threatening criminal arrest violates RBI fair recovery guidelines."
+  escalate_to_human: false
+
+- id: LOAN-USURIOUS-INTEREST-002
+  domain: loan
+  claim_type: penal_interest_exorbitant
+  verdict: overstated
+  statute: "Usurious Loans Act, 1918 / RBI Guidelines on Fair Practices (2023)"
+  section: "RBI Circular DoR.MCS.REC.28/01.01.001/2023-24"
+  authority: "RBI Master Direction on Penal Charges in Loan Accounts"
+  verified_by: "AMJ"
+  verified_on: "2026-09-19"
+  response_window_days: null
+  plain_language: >
+    RBI strictly prohibits penal interest from being capitalized or charged as an usurious 
+    punitive rate. Penalties for delayed payment must be reasonable, capped per contract, 
+    and cannot be compounded into principal.
+  remedy_action: "Demand a revised statement of account recalculating penal interest strictly according to the sanctioned agreement schedule."
+  escalate_to_human: false
+
+- id: NI-ACT-138-NOTICE-003
+  domain: loan
+  claim_type: cheque_dishonour_window
+  verdict: valid
+  statute: "Negotiable Instruments Act, 1881"
+  section: "Section 138 proviso (b) & (c)"
+  authority: "Dalmia Cement (Bharat) Ltd. v. Galaxy Traders (2001) 1 SCC 631"
+  verified_by: "AMJ"
+  verified_on: "2026-09-19"
+  response_window_days: 15
+  plain_language: >
+    Under Section 138 of the NI Act, a legal notice for a bounced cheque gives the drawer 
+    strictly 15 days from the date of receipt to pay the amount. No criminal complaint can be 
+    filed before this 15-day window expires.
+  remedy_action: "Ensure either full payment within 15 days of notice receipt or dispatch a formal written rebuttal denying debt liability before Day 15."
+  escalate_to_human: true
+
+- id: TENANCY-EVICTION-WINDOW-004
+  domain: rent
+  claim_type: summary_eviction_7day
+  verdict: unenforceable
+  statute: "Transfer of Property Act, 1882 / Model Tenancy Act, 2021"
+  section: "Section 106 TPA, 1882"
+  authority: "Anthony v. K.C. Ittoop & Sons (2000) 6 SCC 394"
+  verified_by: "AMJ"
+  verified_on: "2026-09-19"
+  response_window_days: 30
+  plain_language: >
+    A landlord cannot demand summary vacation in 7 days. Under Section 106 of the Transfer of 
+    Property Act, a lease for residential purposes can only be terminated by at least 15 days' 
+    written notice (or 30 days under Model Tenancy Act / most registered tenancy agreements).
+  remedy_action: "Reply citing Section 106 TPA and relevant agreement clause stating that the 7-day notice is legally void and 30 days is the statutory minimum."
+  escalate_to_human: false
+
+- id: TENANCY-SECURITY-FORFEIT-005
+  domain: rent
+  claim_type: arbitrary_security_deposit_forfeit
+  verdict: unsupported
+  statute: "Indian Contract Act, 1872 / Model Tenancy Act, 2021"
+  section: "Section 74 Indian Contract Act / Section 11 Model Tenancy Act"
+  authority: "Kailash Nath Associates v. DDA (2015) 4 SCC 136"
+  verified_by: "AMJ"
+  verified_on: "2026-09-19"
+  response_window_days: null
+  plain_language: >
+    A landlord cannot unilaterally forfeit the entire security deposit as a penalty. 
+    Deductions can only be made for actual unpaid rent or physical damage verified against 
+    inspection. Penal forfeiture without proving actual damage is invalid in law.
+  remedy_action: "Provide utility bills and rent payment receipts, demanding refund of the deposit balance within 30 days."
+  escalate_to_human: false
+
+- id: REPEALED-IPC-420-006
+  domain: general
+  claim_type: citation_of_repealed_law
+  verdict: overstated
+  statute: "Bharatiya Nyaya Sanhita, 2023 (BNS)"
+  section: "Section 318(4) BNS (Replaced Section 420 IPC on 1 July 2024)"
+  authority: "Criminal Law Amendment Notification 2024"
+  verified_by: "AMJ"
+  verified_on: "2026-09-19"
+  response_window_days: null
+  plain_language: >
+    The notice cites Section 420 of the Indian Penal Code (IPC). The IPC was repealed on 
+    1 July 2024 and replaced by the Bharatiya Nyaya Sanhita (BNS). For any alleged conduct 
+    after 1 July 2024, citing IPC is procedurally defective; Section 318 BNS governs.
+  remedy_action: "Point out procedural deficiency in the advocate's legal framing while denying fraudulent intent."
+  escalate_to_human: false
+
+- id: EMP-RESTRICTIVE-COVENANT-007
+  domain: employment
+  claim_type: post_employment_non_compete
+  verdict: unenforceable
+  statute: "Indian Contract Act, 1872"
+  section: "Section 27"
+  authority: "Percept D'Mark (India) Pvt. Ltd. v. Zaheer Khan (2006) 4 SCC 227"
+  verified_by: "AMJ"
+  verified_on: "2026-09-19"
+  response_window_days: null
+  plain_language: >
+    Under Section 27 of the Indian Contract Act, any agreement in restraint of lawful profession, 
+    trade, or business is void. Post-employment non-compete clauses are completely unenforceable in India.
+  remedy_action: "Respond that post-employment restrictions are void under Section 27 of the Indian Contract Act."
+  escalate_to_human: false
