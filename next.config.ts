@@ -4,6 +4,10 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   compress: true,
   poweredByHeader: false,
+  // Bundle data/statutes.yaml into the serverless function on Vercel
+  outputFileTracingIncludes: {
+    "/api/analyze": ["./data/**/*"],
+  },
   experimental: {
     optimizePackageImports: [
       "lucide-react",
