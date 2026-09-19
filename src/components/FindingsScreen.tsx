@@ -126,79 +126,89 @@ export const FindingsScreen: React.FC<FindingsScreenProps> = ({
   return (
     <div ref={containerRef} className="flex flex-col w-full space-y-6 relative">
       {/* Top Banner & Metadata Strip */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-[var(--border)] pb-4 gap-3">
+      <header className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-[var(--border)] pb-4 gap-3">
         <div>
           <div className="flex items-center gap-2">
-            <span className="text-xs font-bold uppercase tracking-wider text-[var(--muted-foreground)]">
+            <span className="text-xs font-bold uppercase tracking-wider text-stone-700">
               Cross-Examination Audit
             </span>
-            <span className="text-xs px-2 py-0.5 rounded bg-gray-100 font-mono text-gray-700">
+            <span className="text-xs px-2 py-0.5 rounded bg-gray-100 font-mono text-gray-800">
               HASH: {data.document_hash.substring(0, 10)}...
             </span>
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold font-serif-legal text-[var(--foreground)] mt-0.5">
+          <h1 className="text-xl sm:text-2xl font-bold font-serif-legal text-[var(--foreground)] mt-0.5">
             {data.notice_metadata.sender}
-          </h2>
-          <p className="text-xs text-[var(--muted-foreground)] mt-0.5">
+          </h1>
+          <p className="text-xs text-stone-700 mt-0.5">
             Received: {data.notice_metadata.notice_date} via {data.notice_metadata.mode_of_service} · Demanded Amount:{" "}
-            <strong>{formatCurrency(data.notice_metadata.alleged_amount)}</strong>
+            <strong className="text-stone-950">{formatCurrency(data.notice_metadata.alleged_amount)}</strong>
           </p>
         </div>
 
         <div className="flex items-center gap-2 w-full sm:w-auto">
           {/* View Mode Toggle */}
-          <div className="flex items-center rounded-lg border border-[var(--border)] p-0.5 bg-gray-50 mr-2">
+          <div role="tablist" aria-label="Audit display modes" className="flex items-center rounded-lg border border-[var(--border)] p-0.5 bg-gray-50 mr-2">
             <button
+              type="button"
+              role="tab"
+              aria-selected={viewMode === "documents"}
               onClick={() => setViewMode("documents")}
-              className={`text-xs px-2.5 py-1 rounded-md font-medium transition-colors flex items-center gap-1 cursor-pointer ${
+              className={`text-xs px-2.5 py-1 rounded-md font-medium transition-colors flex items-center gap-1 cursor-pointer focus-visible:ring-2 focus-visible:ring-amber-500 ${
                 viewMode === "documents"
                   ? "bg-white text-gray-900 shadow-2xs font-semibold"
-                  : "text-gray-500 hover:text-gray-900"
+                  : "text-stone-700 hover:text-gray-900"
               }`}
             >
-              <SplitSquareVertical className="w-3 h-3" /> Bilateral View
+              <SplitSquareVertical aria-hidden="true" className="w-3 h-3" /> Bilateral View
             </button>
             <button
+              type="button"
+              role="tab"
+              aria-selected={viewMode === "analysis"}
               onClick={() => setViewMode("analysis")}
-              className={`text-xs px-2.5 py-1 rounded-md font-medium transition-colors flex items-center gap-1 cursor-pointer ${
+              className={`text-xs px-2.5 py-1 rounded-md font-medium transition-colors flex items-center gap-1 cursor-pointer focus-visible:ring-2 focus-visible:ring-amber-500 ${
                 viewMode === "analysis"
                   ? "bg-white text-gray-900 shadow-2xs font-semibold"
-                  : "text-gray-500 hover:text-gray-900"
+                  : "text-stone-700 hover:text-gray-900"
               }`}
             >
-              <BookOpen className="w-3 h-3" /> Deep Analysis
+              <BookOpen aria-hidden="true" className="w-3 h-3" /> Deep Analysis
             </button>
           </div>
 
           <button
+            type="button"
             onClick={onReset}
-            className="text-xs px-3 py-1.5 rounded border border-[var(--border)] text-[var(--muted-foreground)] hover:text-black cursor-pointer"
+            aria-label="Upload another legal notice"
+            className="text-xs px-3 py-1.5 rounded border border-[var(--border)] text-stone-800 hover:text-black cursor-pointer bg-white focus-visible:ring-2 focus-visible:ring-stone-500"
           >
             ← Upload Other
           </button>
           <button
+            type="button"
             onClick={onProceedToAct}
-            className="text-xs px-4 py-1.5 rounded bg-[var(--foreground)] text-[var(--background)] font-medium hover:bg-black transition-colors flex items-center gap-1.5 cursor-pointer shadow-xs"
+            aria-label="Proceed to Action Suite and deadline clock"
+            className="text-xs px-4 py-1.5 rounded bg-stone-950 text-white font-medium hover:bg-black transition-colors flex items-center gap-1.5 cursor-pointer shadow-xs focus-visible:ring-2 focus-visible:ring-amber-500"
           >
-            Action Suite & Clock
-            <ArrowRight className="w-3.5 h-3.5" />
+            Action Suite &amp; Clock
+            <ArrowRight aria-hidden="true" className="w-3.5 h-3.5" />
           </button>
         </div>
-      </div>
+      </header>
 
       {/* Hero Headline / In-Language Callout */}
       {data.translations?.hi && (
-        <div className="bg-amber-50/70 border border-amber-200 rounded-xl p-4 flex items-start gap-3">
-          <Sparkles className="w-5 h-5 text-amber-600 mt-0.5 shrink-0" />
+        <section aria-label="Hindi summary" className="bg-amber-50/70 border border-amber-200 rounded-xl p-4 flex items-start gap-3">
+          <Sparkles aria-hidden="true" className="w-5 h-5 text-amber-600 mt-0.5 shrink-0" />
           <div className="space-y-1">
-            <h4 className="text-sm font-bold text-amber-950 font-serif-legal">
+            <h2 className="text-sm font-bold text-amber-950 font-serif-legal">
               {data.translations.hi.summary_headline}
-            </h4>
+            </h2>
             <p className="text-xs text-amber-900 leading-relaxed">
               {data.translations.hi.plain_summary}
             </p>
           </div>
-        </div>
+        </section>
       )}
 
       {/* Dynamic SVG Connector connecting active claim to contract clause */}
@@ -212,50 +222,53 @@ export const FindingsScreen: React.FC<FindingsScreenProps> = ({
       )}
 
       {/* Main Dual-Pane Cross Examination View */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+      <section aria-label="Cross examination results" className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         {/* Left Column: Verdict Rail (Claims List) */}
         <div className="lg:col-span-4 space-y-3">
           <div className="flex items-center justify-between px-1">
-            <span className="text-xs font-bold uppercase tracking-wider text-[var(--muted-foreground)]">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-stone-700">
               Demands on Trial ({data.claims.length})
-            </span>
-            <span className="text-[11px] text-[var(--muted-foreground)]">Click to highlight</span>
+            </h2>
+            <span className="text-[11px] text-stone-600 font-medium">Click to highlight</span>
           </div>
 
-          <div className="space-y-2.5">
+          <div role="tablist" aria-label="Claims on trial" className="space-y-2.5">
             {data.claims.map((claim, idx) => {
               const isSelected = claim.id === selectedClaimId;
               return (
-                <div
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={isSelected}
                   key={claim.id}
                   ref={(el) => {
                     claimRefs.current[claim.id] = el;
                   }}
                   onClick={() => setSelectedClaimId(claim.id)}
-                  className={`p-3.5 rounded-xl border transition-all cursor-pointer text-left relative ${
+                  className={`w-full p-3.5 rounded-xl border transition-all cursor-pointer text-left relative focus-visible:ring-2 focus-visible:ring-amber-500 ${
                     isSelected
                       ? "border-[var(--foreground)] bg-white shadow-md ring-1 ring-[var(--foreground)]/10"
                       : "border-[var(--border)] bg-white/70 hover:bg-white hover:border-gray-300 shadow-2xs"
                   }`}
                 >
                   <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-[11px] font-mono font-bold text-gray-500">
+                    <span className="text-[11px] font-mono font-bold text-stone-600">
                       #{idx + 1} · {claim.claim_type.replace(/_/g, " ")}
                     </span>
                     {getVerdictBadge(claim.verdict)}
                   </div>
 
-                  <p className="text-xs font-serif-legal text-gray-900 line-clamp-2 italic">
+                  <p className="text-xs font-serif-legal text-stone-900 line-clamp-2 italic">
                     &ldquo;{claim.notice_quote}&rdquo;
                   </p>
 
-                  <div className="mt-2 flex items-center justify-between text-[11px] text-[var(--muted-foreground)] pt-2 border-t border-gray-100">
-                    <span className="truncate max-w-[180px] font-medium text-gray-700">
+                  <div className="mt-2 flex items-center justify-between text-[11px] text-stone-600 pt-2 border-t border-gray-100">
+                    <span className="truncate max-w-[180px] font-medium text-stone-800">
                       {claim.agreement_clause || "Statutory Ground"}
                     </span>
-                    <span className="text-amber-700 font-semibold text-[10px]">Inspect Clause →</span>
+                    <span className="text-amber-800 font-semibold text-[10px]">Inspect Clause →</span>
                   </div>
-                </div>
+                </button>
               );
             })}
           </div>
@@ -357,7 +370,7 @@ export const FindingsScreen: React.FC<FindingsScreenProps> = ({
             </div>
           )}
         </div>
-      </div>
+      </section>
     </div>
   );
 };

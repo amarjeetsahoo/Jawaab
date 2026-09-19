@@ -34,68 +34,74 @@ export const IntakeScreen: React.FC<IntakeScreenProps> = ({
       </div>
 
       {/* 1-Click Demo Scenarios (Judge-Friendly) */}
-      <div className="w-full bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 mb-8 shadow-xs">
+      <section aria-labelledby="preloaded-cases-heading" className="w-full bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 mb-8 shadow-xs">
         <div className="flex items-center justify-between mb-3.5">
-          <span className="text-xs font-bold tracking-wider uppercase text-[var(--muted-foreground)] flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+          <h2 id="preloaded-cases-heading" className="text-xs font-bold tracking-wider uppercase text-stone-700 flex items-center gap-1.5">
+            <Sparkles aria-hidden="true" className="w-3.5 h-3.5 text-amber-600" />
             1-Click Pre-Loaded Cases (Instant Zero-Latency Demo)
-          </span>
-          <span className="text-[11px] text-[var(--muted-foreground)]">Verified against bare acts</span>
+          </h2>
+          <span className="text-[11px] text-stone-600 font-medium">Verified against bare acts</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           <button
+            type="button"
             onClick={() => onSelectCase("case_1_loan")}
-            className="flex flex-col text-left p-3.5 rounded-lg border border-[var(--border)] hover:border-amber-400 hover:bg-amber-50/40 transition-all group cursor-pointer bg-white"
+            aria-label="Load demo case: ₹4.8 Lakh Non-Bank Loan Recall"
+            className="flex flex-col text-left p-3.5 rounded-lg border border-[var(--border)] hover:border-amber-500 hover:bg-amber-50/40 transition-all group cursor-pointer bg-white focus-visible:ring-2 focus-visible:ring-amber-500"
           >
             <div className="flex items-center justify-between w-full mb-1">
-              <span className="text-xs font-bold text-red-700 bg-red-50 border border-red-200 px-2 py-0.5 rounded">
-                Loan & Cheque
+              <span className="text-xs font-bold text-red-900 bg-red-50 border border-red-300 px-2 py-0.5 rounded">
+                Loan &amp; Cheque
               </span>
-              <ArrowRight className="w-3.5 h-3.5 text-gray-400 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight aria-hidden="true" className="w-3.5 h-3.5 text-stone-500 group-hover:translate-x-1 transition-transform" />
             </div>
-            <h4 className="font-semibold text-sm text-gray-900 mt-1">₹4.8L Non-Bank Loan Recall</h4>
-            <p className="text-xs text-[var(--muted-foreground)] mt-1 line-clamp-2">
-              Claims 36% penal interest, immediate arrest, & IPC 420 vs. Sanction Letter capping interest at 18%.
+            <h3 className="font-semibold text-sm text-stone-900 mt-1">₹4.8L Non-Bank Loan Recall</h3>
+            <p className="text-xs text-stone-700 mt-1 line-clamp-2">
+              Claims 36% penal interest, immediate arrest, &amp; IPC 420 vs. Sanction Letter capping interest at 18%.
             </p>
           </button>
 
           <button
+            type="button"
             onClick={() => onSelectCase("case_2_rent")}
-            className="flex flex-col text-left p-3.5 rounded-lg border border-[var(--border)] hover:border-blue-400 hover:bg-blue-50/40 transition-all group cursor-pointer bg-white"
+            aria-label="Load demo case: Illegal 7-Day Eviction Notice"
+            className="flex flex-col text-left p-3.5 rounded-lg border border-[var(--border)] hover:border-blue-500 hover:bg-blue-50/40 transition-all group cursor-pointer bg-white focus-visible:ring-2 focus-visible:ring-blue-500"
           >
             <div className="flex items-center justify-between w-full mb-1">
-              <span className="text-xs font-bold text-blue-700 bg-blue-50 border border-blue-200 px-2 py-0.5 rounded">
-                Tenancy & Eviction
+              <span className="text-xs font-bold text-blue-900 bg-blue-50 border border-blue-300 px-2 py-0.5 rounded">
+                Tenancy &amp; Eviction
               </span>
-              <ArrowRight className="w-3.5 h-3.5 text-gray-400 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight aria-hidden="true" className="w-3.5 h-3.5 text-stone-500 group-hover:translate-x-1 transition-transform" />
             </div>
-            <h4 className="font-semibold text-sm text-gray-900 mt-1">Illegal 7-Day Eviction Notice</h4>
-            <p className="text-xs text-[var(--muted-foreground)] mt-1 line-clamp-2">
+            <h3 className="font-semibold text-sm text-stone-900 mt-1">Illegal 7-Day Eviction Notice</h3>
+            <p className="text-xs text-stone-700 mt-1 line-clamp-2">
               Landlord forfeits ₹1.5L deposit and threatens lock-changing vs. 30-day statutory notice in Lease.
             </p>
           </button>
 
           <button
+            type="button"
             onClick={() => onSelectCase("case_3_refusal")}
-            className="flex flex-col text-left p-3.5 rounded-lg border border-purple-200 hover:border-purple-400 hover:bg-purple-50/40 transition-all group cursor-pointer bg-white"
+            aria-label="Load demo case: Custody Threat (Safety Refusal Guardrail)"
+            className="flex flex-col text-left p-3.5 rounded-lg border border-purple-300 hover:border-purple-500 hover:bg-purple-50/40 transition-all group cursor-pointer bg-white focus-visible:ring-2 focus-visible:ring-purple-500"
           >
             <div className="flex items-center justify-between w-full mb-1">
-              <span className="text-xs font-bold text-purple-700 bg-purple-50 border border-purple-200 px-2 py-0.5 rounded">
+              <span className="text-xs font-bold text-purple-900 bg-purple-50 border border-purple-300 px-2 py-0.5 rounded">
                 Responsible AI
               </span>
-              <ArrowRight className="w-3.5 h-3.5 text-gray-400 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight aria-hidden="true" className="w-3.5 h-3.5 text-stone-500 group-hover:translate-x-1 transition-transform" />
             </div>
-            <h4 className="font-semibold text-sm text-gray-900 mt-1">Custody Threat (Safety Refusal)</h4>
-            <p className="text-xs text-[var(--muted-foreground)] mt-1 line-clamp-2">
-              Demonstrates ethical refusal of sensitive family matters and immediate routing to NALSA & emergency helplines.
+            <h3 className="font-semibold text-sm text-stone-900 mt-1">Custody Threat (Safety Refusal)</h3>
+            <p className="text-xs text-stone-700 mt-1 line-clamp-2">
+              Demonstrates ethical refusal of sensitive family matters and immediate routing to NALSA &amp; emergency helplines.
             </p>
           </button>
         </div>
-      </div>
+      </section>
 
       {/* Bilateral Upload Section */}
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      <section aria-label="Upload documents for cross-examination" className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         {/* Pane 1: Threatening Notice */}
         <div
           onDragOver={(e) => e.preventDefault()}
@@ -112,17 +118,24 @@ export const IntakeScreen: React.FC<IntakeScreenProps> = ({
         >
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded bg-red-100 text-red-700 flex items-center justify-center font-bold text-xs">
+              <div aria-hidden="true" className="w-6 h-6 rounded bg-red-100 text-red-900 flex items-center justify-center font-bold text-xs">
                 1
               </div>
-              <h3 className="font-semibold text-sm text-[var(--foreground)]">The Threatening Notice</h3>
+              <label htmlFor="notice-text-input" className="font-semibold text-sm text-[var(--foreground)] cursor-pointer">
+                The Threatening Notice
+              </label>
             </div>
-            <label className="text-[11px] text-red-700 bg-red-50 hover:bg-red-100 border border-red-200 px-2 py-0.5 rounded cursor-pointer transition-colors flex items-center gap-1">
-              <UploadCloud className="w-3 h-3" /> Upload File
+            <label
+              htmlFor="notice-file-upload"
+              className="text-[11px] text-red-900 bg-red-50 hover:bg-red-100 border border-red-300 px-2 py-0.5 rounded cursor-pointer transition-colors flex items-center gap-1 focus-within:ring-2 focus-within:ring-red-500"
+            >
+              <UploadCloud aria-hidden="true" className="w-3 h-3" /> Upload File
               <input
+                id="notice-file-upload"
                 type="file"
                 accept=".txt,.md,.pdf"
-                className="hidden"
+                aria-label="Upload legal notice file"
+                className="sr-only"
                 onChange={(e) => {
                   const file = e.target.files?.[0];
                   if (file) {
@@ -136,17 +149,20 @@ export const IntakeScreen: React.FC<IntakeScreenProps> = ({
           </div>
 
           <textarea
+            id="notice-text-input"
+            name="notice-text"
             value={noticeText}
             onChange={(e) => setNoticeText(e.target.value)}
+            aria-label="Threatening legal notice text"
             placeholder="Paste text of the legal notice here or drag & drop a file..."
-            className="w-full h-44 p-3 text-xs rounded-lg border border-[var(--border)] bg-gray-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-500 font-mono resize-none"
+            className="w-full h-44 p-3 text-xs rounded-lg border border-[var(--border)] bg-gray-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-500 font-mono resize-none text-stone-900"
           />
 
-          <div className="mt-3 flex items-center justify-between text-xs text-[var(--muted-foreground)]">
+          <div className="mt-3 flex items-center justify-between text-xs text-stone-600">
             <span className="flex items-center gap-1">
-              <UploadCloud className="w-3.5 h-3.5" /> Drag & drop or paste notice
+              <UploadCloud aria-hidden="true" className="w-3.5 h-3.5" /> Drag &amp; drop or paste notice
             </span>
-            <span>{noticeText.length} chars</span>
+            <span aria-live="polite">{noticeText.length} chars</span>
           </div>
         </div>
 
@@ -166,17 +182,24 @@ export const IntakeScreen: React.FC<IntakeScreenProps> = ({
         >
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xs">
+              <div aria-hidden="true" className="w-6 h-6 rounded bg-blue-100 text-blue-900 flex items-center justify-center font-bold text-xs">
                 2
               </div>
-              <h3 className="font-semibold text-sm text-[var(--foreground)]">Your Signed Contract</h3>
+              <label htmlFor="agreement-text-input" className="font-semibold text-sm text-[var(--foreground)] cursor-pointer">
+                Your Signed Contract
+              </label>
             </div>
-            <label className="text-[11px] text-blue-700 bg-blue-50 hover:bg-blue-100 border border-blue-200 px-2 py-0.5 rounded cursor-pointer transition-colors flex items-center gap-1">
-              <UploadCloud className="w-3 h-3" /> Upload File
+            <label
+              htmlFor="agreement-file-upload"
+              className="text-[11px] text-blue-900 bg-blue-50 hover:bg-blue-100 border border-blue-300 px-2 py-0.5 rounded cursor-pointer transition-colors flex items-center gap-1 focus-within:ring-2 focus-within:ring-blue-500"
+            >
+              <UploadCloud aria-hidden="true" className="w-3 h-3" /> Upload File
               <input
+                id="agreement-file-upload"
                 type="file"
                 accept=".txt,.md,.pdf"
-                className="hidden"
+                aria-label="Upload signed contract or evidence file"
+                className="sr-only"
                 onChange={(e) => {
                   const file = e.target.files?.[0];
                   if (file) {
@@ -190,32 +213,38 @@ export const IntakeScreen: React.FC<IntakeScreenProps> = ({
           </div>
 
           <textarea
+            id="agreement-text-input"
+            name="agreement-text"
             value={agreementText}
             onChange={(e) => setAgreementText(e.target.value)}
+            aria-label="Your signed contract or counter-evidence text"
             placeholder="Paste text of your agreement or drag & drop a contract file..."
-            className="w-full h-44 p-3 text-xs rounded-lg border border-[var(--border)] bg-gray-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono resize-none"
+            className="w-full h-44 p-3 text-xs rounded-lg border border-[var(--border)] bg-gray-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono resize-none text-stone-900"
           />
 
-          <div className="mt-3 flex items-center justify-between text-xs text-[var(--muted-foreground)]">
+          <div className="mt-3 flex items-center justify-between text-xs text-stone-600">
             <span className="flex items-center gap-1">
-              <FileText className="w-3.5 h-3.5" /> Bilateral Cross-Examination
+              <FileText aria-hidden="true" className="w-3.5 h-3.5" /> Bilateral Cross-Examination
             </span>
-            <span>{agreementText.length} chars</span>
+            <span aria-live="polite">{agreementText.length} chars</span>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Jurisdiction & Language Bar */}
-      <div className="w-full bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
+      <section aria-label="Jurisdiction and analysis options" className="w-full bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
         <div className="flex items-center gap-4 w-full sm:w-auto">
           <div className="flex flex-col">
-            <label className="text-[11px] font-semibold text-[var(--muted-foreground)] uppercase">
+            <label htmlFor="jurisdiction-select" className="text-[11px] font-semibold text-stone-700 uppercase">
               State Jurisdiction
             </label>
             <select
+              id="jurisdiction-select"
+              name="jurisdiction"
               value={jurisdiction}
               onChange={(e) => setJurisdiction(e.target.value)}
-              className="text-xs bg-gray-50 border border-[var(--border)] rounded px-2.5 py-1.5 focus:outline-none font-medium text-gray-800"
+              aria-label="Select state legal jurisdiction"
+              className="text-xs bg-gray-50 border border-[var(--border)] rounded px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-amber-500 font-medium text-gray-900"
             >
               <option value="DL">Delhi (NCT)</option>
               <option value="KA">Karnataka (Bengaluru)</option>
@@ -226,13 +255,16 @@ export const IntakeScreen: React.FC<IntakeScreenProps> = ({
           </div>
 
           <div className="flex flex-col">
-            <label className="text-[11px] font-semibold text-[var(--muted-foreground)] uppercase">
+            <label htmlFor="language-select" className="text-[11px] font-semibold text-stone-700 uppercase">
               Explanation Language
             </label>
             <select
+              id="language-select"
+              name="language"
               value={language}
               onChange={(e) => setLanguage(e.target.value)}
-              className="text-xs bg-gray-50 border border-[var(--border)] rounded px-2.5 py-1.5 focus:outline-none font-medium text-gray-800"
+              aria-label="Select explanation language"
+              className="text-xs bg-gray-50 border border-[var(--border)] rounded px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-amber-500 font-medium text-gray-900"
             >
               <option value="hi">हिंदी (Hindi)</option>
               <option value="en">English</option>
@@ -243,6 +275,7 @@ export const IntakeScreen: React.FC<IntakeScreenProps> = ({
         </div>
 
         <button
+          type="button"
           onClick={() => {
             if (!noticeText.trim()) {
               onSelectCase("case_1_loan");
@@ -250,12 +283,13 @@ export const IntakeScreen: React.FC<IntakeScreenProps> = ({
               onCustomSubmit(noticeText, agreementText, jurisdiction, language);
             }
           }}
-          className="w-full sm:w-auto px-6 py-2.5 bg-[var(--foreground)] text-[var(--background)] font-medium text-xs rounded-lg hover:bg-black transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm"
+          aria-label="Cross-examine legal notice against signed contract"
+          className="w-full sm:w-auto px-6 py-2.5 bg-stone-950 text-white font-medium text-xs rounded-lg hover:bg-black transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm focus-visible:ring-2 focus-visible:ring-amber-500"
         >
           Cross-Examine Documents
-          <ArrowRight className="w-3.5 h-3.5" />
+          <ArrowRight aria-hidden="true" className="w-3.5 h-3.5" />
         </button>
-      </div>
+      </section>
     </div>
   );
 };

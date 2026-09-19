@@ -15,11 +15,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen bg-[var(--background)] text-[var(--foreground)] antialiased selection:bg-amber-100 selection:text-amber-900">
-        <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--background)]/90 backdrop-blur-sm px-6 py-3.5">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:bg-stone-900 focus:text-white focus:rounded-md focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-amber-500 text-xs font-semibold"
+        >
+          Skip to main content
+        </a>
+
+        <header role="banner" className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--background)]/90 backdrop-blur-sm px-6 py-3.5">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <a href="/" className="flex items-center space-x-2.5">
-                <div className="w-8 h-8 rounded bg-[var(--foreground)] text-[var(--background)] flex items-center justify-center font-bold text-lg font-serif">
+              <a href="/" aria-label="Jawaab Legal Notice Cross-Examiner Home" className="flex items-center space-x-2.5">
+                <div aria-hidden="true" className="w-8 h-8 rounded bg-[var(--foreground)] text-[var(--background)] flex items-center justify-center font-bold text-lg font-serif">
                   J
                 </div>
                 <div className="flex flex-col">
@@ -33,14 +40,15 @@ export default function RootLayout({
               </a>
             </div>
 
-            <div className="flex items-center space-x-3">
-              <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-emerald-50 text-emerald-800 border border-emerald-200">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5 animate-pulse"></span>
+            <nav aria-label="Main Navigation" className="flex items-center space-x-3">
+              <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-emerald-50 text-emerald-900 border border-emerald-300">
+                <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-emerald-600 mr-1.5 animate-pulse"></span>
                 Statute Pack v1.0 Active (Verified)
               </span>
               <a
                 href="#how-it-works"
-                className="text-xs text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors px-2 py-1"
+                aria-label="View legal verification methodology"
+                className="text-xs text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors px-2 py-1 focus-visible:ring-2 focus-visible:ring-amber-500 rounded"
               >
                 Methodology
               </a>
@@ -48,24 +56,25 @@ export default function RootLayout({
                 href="https://nalsa.gov.in"
                 target="_blank"
                 rel="noreferrer"
-                className="text-xs font-medium text-blue-700 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded px-2.5 py-1 transition-colors"
+                aria-label="National Legal Services Authority Helpline: 15100 (opens in new tab)"
+                className="text-xs font-medium text-blue-900 bg-blue-50 hover:bg-blue-100 border border-blue-300 rounded px-2.5 py-1 transition-colors focus-visible:ring-2 focus-visible:ring-blue-500"
               >
                 NALSA Helpline: 15100
               </a>
-            </div>
+            </nav>
           </div>
         </header>
 
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6 min-h-[calc(100vh-65px)] flex flex-col">
+        <main id="main-content" role="main" tabIndex={-1} className="max-w-7xl mx-auto px-4 sm:px-6 py-6 min-h-[calc(100vh-65px)] flex flex-col focus:outline-none">
           {children}
         </main>
 
-        <footer className="border-t border-[var(--border)] bg-[var(--background)] py-6 text-center text-xs text-[var(--muted-foreground)]">
+        <footer role="contentinfo" className="border-t border-[var(--border)] bg-[var(--background)] py-6 text-center text-xs text-[var(--muted-foreground)]">
           <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
             <p>
               <strong>Disclaimer:</strong> Jawaab provides automated legal information, document cross-examination, and audit preparation. It is not a substitute for formal legal counsel from an enrolled advocate.
             </p>
-            <p className="text-[11px] text-gray-400">
+            <p className="text-[11px] text-stone-600 font-medium">
               Built for Google AI Hackathon · 2 Calls, Zero RAG
             </p>
           </div>

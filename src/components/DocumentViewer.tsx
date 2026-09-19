@@ -103,7 +103,10 @@ export const DocumentViewer: React.FC<DocumentViewerProps> = ({
       {/* Document Scroll Area */}
       <div
         ref={containerRef}
-        className="p-5 overflow-y-auto max-h-[420px] bg-white text-justify select-text relative"
+        role="region"
+        tabIndex={0}
+        aria-label={`${title} document content`}
+        className="p-5 overflow-y-auto max-h-[420px] bg-white text-justify select-text relative focus-visible:ring-2 focus-visible:ring-amber-500 focus:outline-none"
       >
         {renderHighlightedContent()}
       </div>

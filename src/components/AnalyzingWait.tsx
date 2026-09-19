@@ -33,19 +33,19 @@ export const AnalyzingWait: React.FC<AnalyzingWaitProps> = ({ onComplete }) => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[60vh] max-w-lg mx-auto text-center px-4">
-      <div className="w-16 h-16 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center mb-6 text-amber-800 shadow-sm animate-pulse">
+      <div aria-hidden="true" className="w-16 h-16 rounded-2xl bg-amber-50 border border-amber-300 flex items-center justify-center mb-6 text-amber-800 shadow-sm animate-pulse">
         <ShieldCheck className="w-8 h-8 text-amber-700" />
       </div>
 
-      <h2 className="text-2xl font-bold font-serif-legal text-[var(--foreground)] tracking-tight mb-2">
+      <h1 className="text-2xl font-bold font-serif-legal text-[var(--foreground)] tracking-tight mb-2">
         Cross-Examining Documents
-      </h2>
-      <p className="text-xs text-[var(--muted-foreground)] mb-8">
+      </h1>
+      <p className="text-xs text-stone-600 mb-8">
         Running single-call zero-RAG audit against 15 verified Indian statutes
       </p>
 
       {/* Progress Timeline */}
-      <div className="w-full space-y-3.5 text-left border border-[var(--border)] bg-[var(--card)] rounded-xl p-5 shadow-xs">
+      <div role="status" aria-live="polite" className="w-full space-y-3.5 text-left border border-[var(--border)] bg-[var(--card)] rounded-xl p-5 shadow-xs">
         {STAGES.map((stage) => {
           const isDone = currentStage > stage.id;
           const isCurrent = currentStage === stage.id;

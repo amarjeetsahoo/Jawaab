@@ -13,7 +13,7 @@
   --secondary: oklch(0.95 0.006 85);
   --secondary-foreground: oklch(0.22 0.012 265);
   --muted: oklch(0.93 0.006 85);
-  --muted-foreground: oklch(0.53 0.012 265);
+  --muted-foreground: oklch(0.40 0.012 265);
   --accent: oklch(0.95 0.006 85);
   --accent-foreground: oklch(0.22 0.012 265);
   --destructive: oklch(0.48 0.17 25);
@@ -33,6 +33,11 @@
   --verdict-unenforceable-bg: oklch(0.95 0.05 25);
 
   --radius: 0.5rem;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
 body {
