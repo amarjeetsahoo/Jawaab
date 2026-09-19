@@ -14,14 +14,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body className="min-h-screen bg-[var(--background)] text-[var(--foreground)] antialiased selection:bg-amber-100 selection:text-amber-900">
         <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--background)]/90 backdrop-blur-sm px-6 py-3.5">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
