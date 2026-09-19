@@ -11,6 +11,14 @@
 
 ---
 
+## 🎬 Live End-to-End Demo (Autonomous Browser Session)
+
+![Jawaab Full End-to-End Verification Demo](docs/media/full_e2e_verified_-62135596800000.webp)
+
+*Complete automated browser walkthrough recorded live on localhost:3000 showing Bilateral Document View, dynamic GSAP SVG connectors, in-document sentence highlights, Deadline Clock, Lawyer Brief PDF export, and Responsible AI safety refusal.*
+
+---
+
 ## 1. Executive Summary & The Problem
 
 When an intimidating legal notice arrives in an Indian household, recipients typically freeze in fear. Senders and advocates routinely overstate their claims, inflate interest rates to usurious levels, and threaten immediate police arrest for pure civil debt — precisely because they know the recipient has likely **never read their underlying contract**.
@@ -215,6 +223,11 @@ node tests/verify-security.mjs
 ✔ Rate limiter triggered on request #8 with HTTP 429! (Retry-After: 59s)
 🎉 ALL BACKEND SECURITY & RATE LIMITING TESTS PASSED!
 ```
+
+### 5. Autonomous Browser E2E Session Recording
+The entire user journey across Loan Recall, Tenant Eviction, and Responsible AI Refusal was executed by an autonomous browser agent and recorded live:
+- **Recording Artifact:** `docs/media/full_e2e_verified_-62135596800000.webp`
+- **Scenarios Validated:** Dynamic GSAP bezier curves, auto-scrolling to clauses, 15-day & 30-day Deadline Clock, in-browser Hindi TTS audio, and printable lawyer handoff brief.
 
 ---
 
