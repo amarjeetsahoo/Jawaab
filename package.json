@@ -1,6 +1,26 @@
 {
   "name": "jawaab",
   "version": "0.1.0",
+  "description": "Zero-RAG Legal Notice Decoder & Cross-Examiner for Indian Law powered by Google Gemini",
+  "keywords": [
+    "gemini-api",
+    "legal-tech",
+    "indian-law",
+    "zero-rag",
+    "nextjs15",
+    "responsible-ai",
+    "ai-for-good",
+    "gsap",
+    "cpc",
+    "ni-act-138",
+    "legal-notice"
+  ],
+  "author": "amarjeetsahoo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amarjeetsahoo/Jawaab.git"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",
